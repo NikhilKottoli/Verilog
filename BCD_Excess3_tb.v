@@ -2,7 +2,7 @@
 `include "BCD_Excess3.v"
 
 module TestBench;
-    reg [3:0] data;
+    reg [3:0] data;//int data[4]
     reg [3:0] data2;
     wire W,X,Y,Z;
     wire P,Q,R,S;
@@ -15,14 +15,14 @@ module TestBench;
         $dumpfile("BCD_Excess3_tb.vcd");
         $dumpvars(0,TestBench);
 
-        $display("Converting BCD Into EXCESS-3\n");
+        $display("Converting BCD Into EXCESS-3 Using Dataflow\n");
         $display("BCD\tEXCESS-3");
         $display("----\t--------");
         for(data=0; data<10; data=data+1) begin
             #10 $display("%b\t%b%b%b%b", data, W, X, Y, Z);
         end
 
-        $display("\n\nConverting EXCESS-3 Into BCD\n");
+        $display("\n\nConverting EXCESS-3 Into BCD Using Structural\n");
 
         for(data2 = 0;data2<10;data2=data2+1) begin
             #10 $display("%b\t%b%b%b%b", data2, P, Q, R, S);
