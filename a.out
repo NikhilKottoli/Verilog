@@ -1,0 +1,175 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x141704170 .scope module, "TestBench" "TestBench" 2 4;
+ .timescale -9 -9;
+v0x141716960_0 .net "P", 0 0, L_0x141718b20;  1 drivers
+v0x1417169f0_0 .net "Q", 0 0, L_0x141718fb0;  1 drivers
+v0x141716a80_0 .net "R", 0 0, L_0x141718a00;  1 drivers
+v0x141716b10_0 .net "S", 0 0, L_0x141719350;  1 drivers
+v0x141716ba0_0 .net "W", 0 0, L_0x141717480;  1 drivers
+v0x141716c70_0 .net "X", 0 0, L_0x141717b90;  1 drivers
+v0x141716d20_0 .net "Y", 0 0, L_0x141717f10;  1 drivers
+v0x141716dd0_0 .net "Z", 0 0, L_0x141718340;  1 drivers
+v0x141716e80_0 .var "data", 3 0;
+v0x141716f90_0 .var "data2", 3 0;
+L_0x1417180c0 .part v0x141716e80_0, 3, 1;
+L_0x1417183f0 .part v0x141716e80_0, 2, 1;
+L_0x1417184d0 .part v0x141716e80_0, 1, 1;
+L_0x141718570 .part v0x141716e80_0, 0, 1;
+L_0x141719480 .part v0x141716f90_0, 3, 1;
+L_0x141719520 .part v0x141716f90_0, 2, 1;
+L_0x1417195c0 .part v0x141716f90_0, 1, 1;
+L_0x1417196a0 .part v0x141716f90_0, 0, 1;
+S_0x1417042f0 .scope module, "case1" "BCD_Excess3_Dataflow" 2 10, 3 1 0, S_0x141704170;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "C";
+    .port_info 3 /INPUT 1 "D";
+    .port_info 4 /OUTPUT 1 "W";
+    .port_info 5 /OUTPUT 1 "X";
+    .port_info 6 /OUTPUT 1 "Y";
+    .port_info 7 /OUTPUT 1 "Z";
+L_0x141717020 .functor NOT 1, L_0x1417183f0, C4<0>, C4<0>, C4<0>;
+L_0x1417170b0 .functor AND 1, L_0x1417180c0, L_0x141717020, C4<1>, C4<1>;
+L_0x1417171a0 .functor AND 1, L_0x1417183f0, L_0x141718570, C4<1>, C4<1>;
+L_0x141717290 .functor OR 1, L_0x1417170b0, L_0x1417171a0, C4<0>, C4<0>;
+L_0x1417173c0 .functor AND 1, L_0x1417184d0, L_0x1417183f0, C4<1>, C4<1>;
+L_0x141717480 .functor OR 1, L_0x141717290, L_0x1417173c0, C4<0>, C4<0>;
+L_0x1417175b0 .functor NOT 1, L_0x1417184d0, C4<0>, C4<0>, C4<0>;
+L_0x1417176a0 .functor AND 1, L_0x1417183f0, L_0x1417175b0, C4<1>, C4<1>;
+L_0x141717790 .functor NOT 1, L_0x141718570, C4<0>, C4<0>, C4<0>;
+L_0x141717890 .functor AND 1, L_0x1417176a0, L_0x141717790, C4<1>, C4<1>;
+L_0x141717940 .functor NOT 1, L_0x1417183f0, C4<0>, C4<0>, C4<0>;
+L_0x141717a10 .functor AND 1, L_0x141717940, L_0x141718570, C4<1>, C4<1>;
+L_0x141717a80 .functor OR 1, L_0x141717890, L_0x141717a10, C4<0>, C4<0>;
+L_0x141717c00 .functor NOT 1, L_0x1417183f0, C4<0>, C4<0>, C4<0>;
+L_0x141717c70 .functor AND 1, L_0x1417184d0, L_0x141717c00, C4<1>, C4<1>;
+L_0x141717b90 .functor OR 1, L_0x141717a80, L_0x141717c70, C4<0>, C4<0>;
+L_0x141717e20 .functor NOT 1, L_0x1417184d0, C4<0>, C4<0>, C4<0>;
+L_0x141717fa0 .functor NOT 1, L_0x141718570, C4<0>, C4<0>, C4<0>;
+L_0x141718010 .functor AND 1, L_0x141717e20, L_0x141717fa0, C4<1>, C4<1>;
+L_0x141718160 .functor AND 1, L_0x1417184d0, L_0x141718570, C4<1>, C4<1>;
+L_0x141717f10 .functor OR 1, L_0x141718010, L_0x141718160, C4<0>, C4<0>;
+L_0x141718340 .functor NOT 1, L_0x141718570, C4<0>, C4<0>, C4<0>;
+v0x1417045c0_0 .net "A", 0 0, L_0x1417180c0;  1 drivers
+v0x141714670_0 .net "B", 0 0, L_0x1417183f0;  1 drivers
+v0x141714710_0 .net "C", 0 0, L_0x1417184d0;  1 drivers
+v0x1417147a0_0 .net "D", 0 0, L_0x141718570;  1 drivers
+v0x141714840_0 .net "W", 0 0, L_0x141717480;  alias, 1 drivers
+v0x141714920_0 .net "X", 0 0, L_0x141717b90;  alias, 1 drivers
+v0x1417149c0_0 .net "Y", 0 0, L_0x141717f10;  alias, 1 drivers
+v0x141714a60_0 .net "Z", 0 0, L_0x141718340;  alias, 1 drivers
+v0x141714b00_0 .net *"_ivl_0", 0 0, L_0x141717020;  1 drivers
+v0x141714c10_0 .net *"_ivl_12", 0 0, L_0x1417175b0;  1 drivers
+v0x141714cc0_0 .net *"_ivl_14", 0 0, L_0x1417176a0;  1 drivers
+v0x141714d70_0 .net *"_ivl_16", 0 0, L_0x141717790;  1 drivers
+v0x141714e20_0 .net *"_ivl_18", 0 0, L_0x141717890;  1 drivers
+v0x141714ed0_0 .net *"_ivl_2", 0 0, L_0x1417170b0;  1 drivers
+v0x141714f80_0 .net *"_ivl_20", 0 0, L_0x141717940;  1 drivers
+v0x141715030_0 .net *"_ivl_22", 0 0, L_0x141717a10;  1 drivers
+v0x1417150e0_0 .net *"_ivl_24", 0 0, L_0x141717a80;  1 drivers
+v0x141715270_0 .net *"_ivl_26", 0 0, L_0x141717c00;  1 drivers
+v0x141715300_0 .net *"_ivl_28", 0 0, L_0x141717c70;  1 drivers
+v0x1417153b0_0 .net *"_ivl_32", 0 0, L_0x141717e20;  1 drivers
+v0x141715460_0 .net *"_ivl_34", 0 0, L_0x141717fa0;  1 drivers
+v0x141715510_0 .net *"_ivl_36", 0 0, L_0x141718010;  1 drivers
+v0x1417155c0_0 .net *"_ivl_38", 0 0, L_0x141718160;  1 drivers
+v0x141715670_0 .net *"_ivl_4", 0 0, L_0x1417171a0;  1 drivers
+v0x141715720_0 .net *"_ivl_6", 0 0, L_0x141717290;  1 drivers
+v0x1417157d0_0 .net *"_ivl_8", 0 0, L_0x1417173c0;  1 drivers
+S_0x141715940 .scope module, "case2" "BCD_Excess3_Gate" 2 11, 3 11 0, S_0x141704170;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "C";
+    .port_info 3 /INPUT 1 "D";
+    .port_info 4 /OUTPUT 1 "W";
+    .port_info 5 /OUTPUT 1 "X";
+    .port_info 6 /OUTPUT 1 "Y";
+    .port_info 7 /OUTPUT 1 "Z";
+L_0x141718690 .functor NOT 1, L_0x141719520, C4<0>, C4<0>, C4<0>;
+L_0x141718700 .functor NOT 1, L_0x1417195c0, C4<0>, C4<0>, C4<0>;
+L_0x141718770 .functor NOT 1, L_0x1417196a0, C4<0>, C4<0>, C4<0>;
+L_0x141718820 .functor AND 1, L_0x141719480, L_0x141718690, C4<1>, C4<1>;
+L_0x141718930 .functor AND 1, L_0x141719520, L_0x1417196a0, C4<1>, C4<1>;
+L_0x141718a70 .functor AND 1, L_0x1417195c0, L_0x141719520, C4<1>, C4<1>;
+L_0x141718b20 .functor OR 1, L_0x141718820, L_0x141718930, L_0x141718a70, C4<0>;
+L_0x141718cd0 .functor AND 1, L_0x141719520, L_0x141718700, L_0x141718770, C4<1>;
+L_0x141718e00 .functor AND 1, L_0x141718690, L_0x1417196a0, C4<1>, C4<1>;
+L_0x141718ec0 .functor AND 1, L_0x1417195c0, L_0x141718690, C4<1>, C4<1>;
+L_0x141718fb0 .functor OR 1, L_0x141718cd0, L_0x141718e00, L_0x141718ec0, C4<0>;
+L_0x141719100 .functor AND 1, L_0x141718700, L_0x141718770, C4<1>, C4<1>;
+L_0x141719170 .functor AND 1, L_0x1417195c0, L_0x1417196a0, C4<1>, C4<1>;
+L_0x141718a00 .functor OR 1, L_0x141719100, L_0x141719170, C4<0>, C4<0>;
+L_0x141719350 .functor NOT 1, L_0x1417196a0, C4<0>, C4<0>, C4<0>;
+v0x141715b70_0 .net "A", 0 0, L_0x141719480;  1 drivers
+v0x141715c00_0 .net "B", 0 0, L_0x141719520;  1 drivers
+v0x141715c90_0 .net "C", 0 0, L_0x1417195c0;  1 drivers
+v0x141715d40_0 .net "D", 0 0, L_0x1417196a0;  1 drivers
+v0x141715de0_0 .net "W", 0 0, L_0x141718b20;  alias, 1 drivers
+v0x141715ec0_0 .net "X", 0 0, L_0x141718fb0;  alias, 1 drivers
+v0x141715f60_0 .net "Y", 0 0, L_0x141718a00;  alias, 1 drivers
+v0x141716000_0 .net "Z", 0 0, L_0x141719350;  alias, 1 drivers
+v0x1417160a0_0 .net "b", 0 0, L_0x141718690;  1 drivers
+v0x1417161b0_0 .net "c", 0 0, L_0x141718700;  1 drivers
+v0x141716240_0 .net "d", 0 0, L_0x141718770;  1 drivers
+v0x1417162e0_0 .net "part1_w", 0 0, L_0x141718820;  1 drivers
+v0x141716380_0 .net "part1_x", 0 0, L_0x141718cd0;  1 drivers
+v0x141716420_0 .net "part1_y", 0 0, L_0x141719100;  1 drivers
+v0x1417164c0_0 .net "part2_w", 0 0, L_0x141718930;  1 drivers
+v0x141716560_0 .net "part2_x", 0 0, L_0x141718e00;  1 drivers
+v0x141716600_0 .net "part2_y", 0 0, L_0x141719170;  1 drivers
+v0x141716790_0 .net "part3_w", 0 0, L_0x141718a70;  1 drivers
+v0x141716820_0 .net "part3_x", 0 0, L_0x141718ec0;  1 drivers
+    .scope S_0x141704170;
+T_0 ;
+    %vpi_call 2 15 "$dumpfile", "BCD_Excess3_tb.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x141704170 {0 0 0};
+    %vpi_call 2 18 "$display", "Converting BCD Into EXCESS-3\012" {0 0 0};
+    %vpi_call 2 19 "$display", "BCD\011EXCESS-3" {0 0 0};
+    %vpi_call 2 20 "$display", "----\011--------" {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x141716e80_0, 0, 4;
+T_0.0 ;
+    %load/vec4 v0x141716e80_0;
+    %pad/u 32;
+    %cmpi/u 10, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %delay 10, 0;
+    %vpi_call 2 22 "$display", "%b\011%b%b%b%b", v0x141716e80_0, v0x141716ba0_0, v0x141716c70_0, v0x141716d20_0, v0x141716dd0_0 {0 0 0};
+    %load/vec4 v0x141716e80_0;
+    %addi 1, 0, 4;
+    %store/vec4 v0x141716e80_0, 0, 4;
+    %jmp T_0.0;
+T_0.1 ;
+    %vpi_call 2 25 "$display", "\012\012Converting EXCESS-3 Into BCD\012" {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x141716f90_0, 0, 4;
+T_0.2 ;
+    %load/vec4 v0x141716f90_0;
+    %pad/u 32;
+    %cmpi/u 10, 0, 32;
+    %jmp/0xz T_0.3, 5;
+    %delay 10, 0;
+    %vpi_call 2 28 "$display", "%b\011%b%b%b%b", v0x141716f90_0, v0x141716960_0, v0x1417169f0_0, v0x141716a80_0, v0x141716b10_0 {0 0 0};
+    %load/vec4 v0x141716f90_0;
+    %addi 1, 0, 4;
+    %store/vec4 v0x141716f90_0, 0, 4;
+    %jmp T_0.2;
+T_0.3 ;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "BCD_Excess3_tb.v";
+    "./BCD_Excess3.v";
