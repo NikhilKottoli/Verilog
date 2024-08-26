@@ -39,7 +39,6 @@ module BCD_Excess3_Gate(A, B, C, D, W, X, Y, Z);
     and(part2_y, C, D);
     or(Y, part1_y, part2_y); // OUTPUT Y
 
-    // Logic for Z
     not(Z, D); // OUTPUT Z
 
 endmodule
