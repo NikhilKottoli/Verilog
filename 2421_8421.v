@@ -8,5 +8,4 @@ module gates(w,x,y,z,a,b,c,d);
     assign c = w ^ y;
     assign d = z;
     
-    
 endmodule

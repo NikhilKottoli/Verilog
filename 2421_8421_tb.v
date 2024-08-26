@@ -56,7 +56,8 @@ module gates_tb;
         $dumpfile("2421_8421_tb.vcd");
         $dumpvars(0, gates_tb);
         // Monitor the inputs and outputs
-        $display(" w   x   y   z    a   b   c   d");
+        $display(" 2  4  2  1 | 8   4   2   1");
+        $display("------------|---------------");
         $monitor(" %b, %b, %b, %b | %b, %b, %b, %b", 
                   w, x, y, z, a, b, c, d);
     end
